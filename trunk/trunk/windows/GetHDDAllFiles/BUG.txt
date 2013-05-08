@@ -1,0 +1,30 @@
+如果查找的结果为文件夹，FILELENGTH为0，需要再次计算
+		已经加入计算方法
+
+
+如何实现无限层文件夹的进入查找？
+		加入递归调用
+
+
+BUG3: 查找的结果并未按文件夹中的顺序排列
+
+
+BUG4: 查找结果未存放，拟采用串行化存放
+
+
+m_iFileBeginTmp第二次开始时，不等于m_iFileBegin
+		不相等是对的。
+
+
+m_lSubFileCount = m_pArrFileInfo.GetCount();存在WLONG->LONG的转换，有内存溢出
+		m_lSubFileCount = (long)m_pArrFileInfo.GetCount();
+
+
+BUG7: 输出结果中包括.和..
+		已使用IsDots屏蔽
+
+
+BUG8: Run-Time Check Failure #2 - Stack around the variable 'dlg' was corrupted.
+
+
+BUG9: 
